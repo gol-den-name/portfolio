@@ -1,0 +1,233 @@
+    body,
+    .navbar,
+    .card,
+    .list-group-item,
+    .accordion,
+    section {
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    body.dark-mode {
+        background-color: #121212;
+        color: #f5f5f5;
+    }
+
+    .dark-mode .navbar {
+        background-color: #000 !important;
+    }
+
+    .dark-mode .btn-outline-light {
+        color: #fff;
+        border-color: #fff;
+    }
+
+    .dark-mode .card {
+        background-color: #1e1e1e;
+        color: #ddd;
+    }
+
+    .dark-mode .list-group-item {
+        background-color: #1e1e1e;
+        color: #ccc;
+    }
+
+    .dark-mode .accordion {
+        background-color: #1e1e1e;
+        color: #ccc;
+    }
+
+    .dark-mode section {
+        background-color: #181818 !important;
+    }
+
+    .dark-mode a.btn-outline-primary {
+        color: #f8f9fa;
+        border-color: #90caf9;
+    }
+
+    body {
+        scroll-behavior: smooth;
+    }
+
+    .hero {
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        padding: 100px 20px;
+        color: white;
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    }
+
+    .custom-card-btn {
+        background-color: #212529;
+        color: #f8f9fa;
+        border: none;
+    }
+
+    .custom-card-btn:hover {
+        background-color: #000;
+        color: #ffd700;
+    }
+
+    /* Optional: tweak in dark mode */
+    body.dark-mode .custom-card-btn {
+        background-color: #333;
+        color: #ffd700;
+    }
+
+    #about {
+        background: #f3f4f6;
+    }
+
+    /* Text animations */
+    @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Image hover effect */
+    .hover-effect {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .hover-effect:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    #about img {
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    #about img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    /* the last sec fix: Accordion full dark mode support */
+    .accordion-item {
+        background-color: #ffffff;
+        color: #212529;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .accordion-button {
+        background-color: #f8f9fa;
+        color: #212529;
+        font-weight: 600;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: #e9ecef;
+        color: #000;
+        box-shadow: none;
+    }
+
+    .accordion-body {
+        background-color: #fff;
+        color: #212529;
+    }
+
+    /* Dark Mode */
+    body.dark-mode .accordion-item {
+        background-color: #111;
+        color: #ffd700;
+        border-color: #444;
+    }
+
+    body.dark-mode .accordion-button {
+        background-color: #000;
+        color: #ffd700;
+    }
+
+    body.dark-mode .accordion-button:not(.collapsed) {
+        background-color: #222;
+        color: #ffd700;
+        box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+    }
+
+    body.dark-mode .accordion-body {
+        background-color: #111;
+        color: #f8f9fa;
+    }
+
+    .profile-pic {
+        max-height: 350px;
+        border: 2px solid #ccc;
+        border-radius: 50%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+        transform: scale(1.05);
+    }
+
+    #skills,
+    #certificates,
+    #academics,
+    #projects {
+        background-color: #ffffff;
+    }
+
+    .list-group-item {
+        background-color: #fdfdfd;
+    }
+ /* Github button hotfix */
+ /* GitHub button auto color switch in dark mode */
+.dark-mode .btn-outline-dark {
+    color: #fff !important;
+    border-color: #fff !important;
+}
+
+.dark-mode .btn-outline-dark:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* certificates issue fixed with the year and the bottom of the card contrastng color part */
+
+/* Certificate card button styling */
+.custom-card-btn {
+    background-color: #212529;
+    color: #f8f9fa;
+    border: none;
+}
+
+.custom-card-btn:hover {
+    background-color: #000;
+    color: #ffd700;
+}
+
+/* Dark mode button */
+body.dark-mode .custom-card-btn {
+    background-color: #333;
+    color: #ffd700;
+    border: 1px solid #ffd700;
+}
+
+body.dark-mode .custom-card-btn:hover {
+    background-color: #ffd700;
+    color: #000;
+}
+
+/* Gold date text in certificates section only */
+body.dark-mode #certificates .text-muted {
+    color: #ffd700 !important;
+}
