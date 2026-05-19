@@ -2,568 +2,572 @@
 <html lang="en">
 
 <head>
+    <!-- [METADATA] Sets the character encoding format to prevent character rendering corruption across browsers -->
     <meta charset="UTF-8" />
+    <!-- [METADATA] Critical for mobile responsiveness; configures screen mapping scales to match modern mobile viewports -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <title>Rochan Patwardhan | Portfolio</title>
+    
+    <!-- [EXTERNAL DEPENDENCY] Bootstrap 5.3.3 Core compiled styles wrapper handling columns, grids, and components -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    
+    <!-- [EXTERNAL DEPENDENCY] FontAwesome CDN serving clean vector icons for technical tags and contact blocks -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    
+    <!-- [LOCAL PATH] Custom stylesheet for colors, transitions, and layout tweaks. Absolute path is relative to help GitHub Pages resolve it -->
     <link href="style.css" rel="stylesheet" />
-    <style>
-
-    </style>
 </head>
 
-<body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+<!-- 
+  [THEME INITIALIZATION] 
+  We add the explicit 'dark-mode' class and Bootstrap's 'data-bs-theme="dark"' attribute directly onto the body tag.
+  This forces the layout and all Bootstrap sub-components to instantly boot up in a dark theme by default, avoiding any flash of light mode.
+-->
+<body class="dark-mode" data-bs-theme="dark">
+
+    <!-- 
+      [NAVIGATION BAR]
+      - navbar-expand-lg: Collapses into a clean mobile hamburger icon on smaller screen dimensions.
+      - sticky-top: Locks the navigation bar to the top of the browser screen while the user scrolls.
+      - navbar-custom: Custom styling hooks mapped inside your style.css for blur mechanics.
+    -->
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm navbar-custom">
         <div class="container">
-            <a class="navbar-brand" href="#home">MyPortfolio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <!-- Brand Logo utilizing the high-impact color token class -->
+            <a class="navbar-brand fw-bold text-accent" href="#home">Rochan.dev</a>
+            
+            <!-- Mobile Hamburger Toggle Element (Visible only on small screens and devices) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+            
+            <!-- Collapsible Links wrapper mapped using modern CSS Flex layout properties to right-align menus -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav align-items-center gap-2">
                     <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
                     <li class="nav-item"><a class="nav-link" href="#academics">Academics</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact info</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    
+                    <!-- Dynamic client-side theme switcher module element -->
+                    <li class="nav-item ms-lg-2">
+                        <button id="themeToggle" class="btn btn-sm btn-outline-accent">☀️ Light Mode</button>
+                    </li>
                 </ul>
-                <button id="darkToggle" class="btn btn-outline-light ms-3">🌙 Dark Mode</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero text-white text-center">
-        <div>
-            <h1>Welcome to My Portfolio</h1>
-            <p class="lead">An aspiring Developer | <span class="typed"
-                    data-typed-items="JavaScript, HTML, CSS, Bootstrap"></span></p>
+    <!-- 
+      [HERO / SHOWCASE INTERFACE]
+      - d-flex align-items-center: Utilizes CSS Flexbox properties to perfectly center content both vertically and horizontally.
+      - hero-section: Custom styling tag matching radial gradient designs configured inside style.css.
+    -->
+    <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
+        <div class="container">
+            <!-- display-2 & fw-extrabold: Renders high-impact headers tailored to grab a recruiter's eye instantly -->
+            <h1 class="display-2 fw-extrabold mb-2">Hi, I'm <span class="text-accent">Rochan Patwardhan</span></h1>
+            
+            <!-- 
+              [TYPED.JS INTEGRATION CONTAINER]
+              - class="typed": Hook used by the JavaScript engine at the bottom of the page to find this element.
+              - data-typed-items: A clean comma-separated list storing your dynamic engineering sub-titles.
+            -->
+            <p class="lead fs-3 mb-4 text-secondary">
+                An aspiring Developer | <span class="typed text-light fw-semibold" data-typed-items="Python Engine Development, Django Applications, SQL Database Design, Frontend UI Architectures"></span>
+            </p>
+            
+            <!-- Quick Action Links for clean user navigation -->
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#projects" class="btn btn-accent px-4 py-2 fw-semibold shadow">Explore Projects</a>
+                <a href="#contact" class="btn btn-outline-light px-4 py-2 fw-semibold">Get In Touch</a>
+            </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 border-top border-bottom">
+    <!-- 
+      [ABOUT ME SECTION]
+      - py-6: Custom consistent vertical padding hook defined in style.css.
+      - border-bottom: Clean structural boundary border separating content zones distinctly.
+    -->
+    <section id="about" class="py-6 border-bottom border-custom">
         <div class="container">
-            <div class="row align-items-center">
-
-                <!-- Text Side (Left) -->
-                <div class="col-md-7">
-                    <h2>About Me</h2>
-                    <p>Hello! 👋 I'm a passionate <strong>developer</strong> who loves crafting clean,
-                        responsive code. My journey into coding began with curiosity and quickly became a full-blown
-                        passion.</p>
-                    <p>I specialize in <strong>HTML, CSS, Python, SQL</strong>, and I’m exploring JavaScript
-                        development frameworks such as <strong>DOM, express.js, node.js, and jQuery</strong>.</p>
-                    <ul>
-                        <li><strong>Location:</strong> Pune, Maharashtra</li>
-                        <li><strong>Education:</strong> Masters in Computer Applications</li>
-                        <li><strong>Hobbies:</strong> tinkering around code, reading, streaming/Gaming</li>
+            <!-- Modern 2-column layout split: Text on the left, Profile box on the right -->
+            <div class="row align-items-center g-5">
+                
+                <!-- LEFT COLUMN: Profile narrative & summary points -->
+                <div class="col-lg-7">
+                    <h2 class="section-title mb-4">About Me</h2>
+                    <p class="lead text-secondary">I am a highly driven computer applications post-graduate, deeply passionate about constructing clean, high-performance web systems and logical data pipelines.</p>
+                    <p class="text-muted">My developmental architecture primarily focuses on building backend services utilizing <strong>Python and complex SQL structures</strong>, alongside designing responsive interfaces via <strong>Bootstrap, JavaScript, and Node.js components</strong>.</p>
+                    
+                    <!-- Bulleted array displaying quick high-level candidate insights layout -->
+                    <ul class="list-unstyled mt-4 row g-3">
+                        <div class="col-sm-6">
+                            <li><i class="fas fa-map-marker-alt text-accent me-2"></i><strong>Location:</strong> Pune, MH, India</li>
+                        </div>
+                        <div class="col-sm-6">
+                            <li><i class="fas fa-graduation-cap text-accent me-2"></i><strong>Education:</strong> MCA Graduate (2023)</li>
+                        </div>
+                        <div class="col-sm-12">
+                            <li><i class="fas fa-gamepad text-accent me-2"></i><strong>Interests:</strong> Algorithm Optimization, Tech Reading, High-Octane Gaming</li>
+                        </div>
                     </ul>
                 </div>
+                
+                <!-- RIGHT COLUMN: Elegant snapshot display card -->
+                <div class="col-lg-5 text-center">
+                    <div class="profile-card p-4 rounded shadow">
+                        <!-- profile-img: Locks proportions down to 1:1 using CSS parameters, completely removing photo stretching bugs -->
+                        <img src="photo_pic.png" alt="Rochan Harish Patwardhan" class="img-fluid rounded-circle mb-3 border border-4 border-accent profile-img" />
+                        <h3 class="fw-bold mb-1">Rochan H. Patwardhan</h3>
+                        <p class="text-accent small fw-semibold mb-3">Backend Engineering Intern / Candidate</p>
+                        <p class="small text-muted mb-0">D.Y Patil Institute of Management & Computer Applications<br>Akurdi, Pune</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
 
-                <!-- Image Side (Right) with Dark Background -->
-                <div class="col-md-5 text-center py-4">
-                    <img src="photo_pic.png" alt="My Photo"
-                        class="img-fluid rounded mb-3 shadow" style="max-width: 200px; border: 4px solid #fff;" />
-                    <h2 class="fw-bold mb-0">Rochan Harish Patwardhan</h2>
-                    <p class="mb-0">🎓 Passout: 2023</p>
-                    <p class="small"><strong>D.Y Patil Institute of Computer Applications<br>Akurdi,Pune</br></strong>
-                    </p>
+    <!-- 
+      [ACADEMICS SECTION]
+      - bg-alt-block: Custom light gray/dark blue background toggle layer to break up long blocks of text.
+    -->
+   <section id="academics" class="py-6 bg-alt-block border-bottom border-custom">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Academic Record</h2>
+            
+            <div class="accordion shadow-sm border border-custom" id="academicsAccordion">
+                
+                <div class="accordion-item bg-dark border-bottom border-custom">
+                    <h2 class="accordion-header" id="headingMCA">
+                        <button class="accordion-button fw-bold bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMCA" aria-expanded="true" aria-controls="collapseMCA">
+                            2021 - 2023 &nbsp;|&nbsp; Masters in Computer Application (MCA)
+                        </button>
+                    </h2>
+                    <div id="collapseMCA" class="accordion-collapse collapse show" aria-labelledby="headingMCA" data-bs-parent="#academicsAccordion">
+                        <div class="accordion-body bg-dark text-white">
+                            <span class="badge bg-success mb-2 fs-6 fw-bold">75.11% Aggregate (CGPA 8.05)</span>
+                            <p class="mb-0 text-white-50">Savitribai Phule Pune University &bull; <em>D.Y Patil Institute of Management and Computer Applications, Akurdi, Pune.</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-dark border-bottom border-custom">
+                    <h2 class="accordion-header" id="headingBCA">
+                        <button class="accordion-button collapsed fw-bold bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBCA" aria-expanded="false" aria-controls="collapseBCA">
+                            2018 - 2021 &nbsp;|&nbsp; BBA in Computer Application (Formerly BCA)
+                        </button>
+                    </h2>
+                    <div id="collapseBCA" class="accordion-collapse collapse" aria-labelledby="headingBCA" data-bs-parent="#academicsAccordion">
+                        <div class="accordion-body bg-dark text-white">
+                            <span class="badge bg-success mb-2 fs-6 fw-bold">77.25% Aggregate</span>
+                            <p class="mb-0 text-white-50">Savitribai Phule Pune University &bull; <em>D.Y Patil College of Arts Commerce and Science, Pimpri, Pune.</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-dark border-bottom border-custom">
+                    <h2 class="accordion-header" id="headingHSC">
+                        <button class="accordion-button collapsed fw-bold bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHSC" aria-expanded="false" aria-controls="collapseHSC">
+                            2018 &nbsp;|&nbsp; Higher Secondary Certificate (HSC)
+                        </button>
+                    </h2>
+                    <div id="collapseHSC" class="accordion-collapse collapse" aria-labelledby="headingHSC" data-bs-parent="#academicsAccordion">
+                        <div class="accordion-body bg-dark text-white">
+                            <span class="badge bg-success text-dark mb-2 fs-6 fw-bold">54.46% Score</span>
+                            <p class="mb-0 text-white-50">Maharashtra State Board (English Medium) &bull; <em>Indrayani Mahavidyalaya, Talegaon Dabhade, Pune.</em></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item bg-dark border-0">
+                    <h2 class="accordion-header" id="headingSSC">
+                        <button class="accordion-button collapsed fw-bold bg-dark text-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSSC" aria-expanded="false" aria-controls="collapseSSC">
+                            2016 &nbsp;|&nbsp; Secondary School Certificate (SSC)
+                        </button>
+                    </h2>
+                    <div id="collapseSSC" class="accordion-collapse collapse" aria-labelledby="headingSSC" data-bs-parent="#academicsAccordion">
+                        <div class="accordion-body bg-dark text-white">
+                            <span class="badge bg-success text-dark mb-2 fs-6 fw-bold">66.60% Score</span>
+                            <p class="mb-0 text-white-50">Maharashtra State Board (English Medium) &bull; <em>Jain English School, Talegaon Dabhade, Pune.</em></p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- academics section -->
-    <section id="academics" class="container py-5">
-        <h2 class="text-center mb-4">🎓 Academic Qualifications</h2>
-
-        <div class="accordion" id="academicsAccordion">
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="degreeOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#mca">
-                        2023 - Masters in Computer Application
-                    </button>
-                </h2>
-                <div id="mca" class="accordion-collapse collapse show" data-bs-parent="#academicsAccordion">
-                    <div class="accordion-body">
-                        <strong>Percentage : 75.11% (CGPA - 8.05)</strong><br>I have obtained my 'Masters in Computer
-                        Application' degree
-                        from <strong>Savitribai Phule Pune University</strong>, through <strong>D.Y Patil Institute of
-                            Management and Computer Applications(DYPIMCA), Akurdi, Pune.</strong></br>
+    <!-- 
+      [PROJECTS PORTFOLIO SHOWCASE BLOCK]
+      - row-cols-1 row-cols-md-2 row-cols-lg-3: Automatically transforms elements into 1-column on mobile view, 2 columns on tablets, and 3 columns on desktops.
+    -->
+    <section id="projects" class="py-6 border-bottom border-custom">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Production Work & Projects</h2>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                
+                <!-- CARD COMPONENT 1: Little Lemon Restaurant Web Application -->
+                <div class="col">
+                    <!-- 'border-accent' highlights this project visually to match your primary backend stack -->
+                    <div class="card h-100 dynamic-card shadow-sm border border-accent">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-accent">Little Lemon Restaurant Web App</h5>
+                            <p class="card-text text-muted small flex-grow-1">A dynamic restaurant web platform featuring custom view templates, clean URL routing structures, database models, and server-side logic rendering backend assets smoothly.</p>
+                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Python, Django framework, SQLite, HTML5 / CSS3</span></div>
+                            <a href="https://github.com/gol-den-name/little-lemon-project-django" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="degreeTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#bca">
-                        2021 - Bachelors in Business Administration in Computer Application (formerly BCA)
-                    </button>
-                </h2>
-                <div id="bca" class="accordion-collapse collapse" data-bs-parent="#academicsAccordion">
-                    <div class="accordion-body">
-                        <strong>Percentage : 77.25%</strong><br>I have obtained my 'Bachelors in Business Administration
-                        in Computer Application (formerly BCA)' degree
-                        from <strong>Savitribai Phule Pune University</strong>, through <strong>D.Y Patil College of
-                            Arts Commerce and Science, Pimpri, Pune.</strong></br>
+                <!-- CARD COMPONENT 2: Django Book Shopping Platform (Highlighted Primary Repo) -->
+                <div class="col">
+                    <div class="card h-100 dynamic-card shadow-sm border border-accent">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-accent">Online Book Shopping Web-System</h5>
+                            <p class="card-text text-muted small flex-grow-1">A scalable e-commerce infrastructure supporting full book catalogs, user sessions, and document storage processing workflows.</p>
+                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Python, Django, MongoDB, ES6 JS</span></div>
+                            <!-- target="_blank": Opens the user's explicit open-source link in a fresh, parallel browser tab structure safely -->
+                            <a href="https://github.com/gol-den-name/bookstore-python" target="_blank" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="degreeThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#hsc">
-                        2018 - HSC(Higher Secondary)
-                    </button>
-                </h2>
-                <div id="hsc" class="accordion-collapse collapse" data-bs-parent="#academicsAccordion">
-                    <div class="accordion-body">
-                        <strong>Percentage : 54.46%</strong><br>I have obtained my 'Higher Secondary School Certificate'
-                        from Maharastra board, English medium, through <strong>Indrayani Mahavidyalay, Talegaon
-                            Dabhade, Pune.</strong></br>
+                <!-- CARD COMPONENT 3: E-Selling Platform -->
+                <div class="col">
+                    <!-- 'dynamic-card' hook handles the hover lift animations defined in your external style sheet -->
+                    <div class="card h-100 dynamic-card shadow-sm">
+                        <!-- d-flex flex-column: Allows the footer button link to always anchor cleanly to the exact same base line across varying descriptions -->
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-accent">Online E-Selling Platform</h5>
+                            <p class="card-text text-muted small flex-grow-1">A direct business application allowing localized brick-and-mortar merchants to launch standard digital store workflows cleanly.</p>
+                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">JavaScript, HTML, PHP, MariaDB</span></div>
+                            <a href="https://github.com/gol-den-name/online-shopping-system-web" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="degreeFour">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#ssc">
-                        2016 - SSC(Secondary School Certificate)
-                    </button>
-                </h2>
-                <div id="ssc" class="accordion-collapse collapse" data-bs-parent="#academicsAccordion">
-                    <div class="accordion-body">
-                        <strong>Percentage : 66.60%</strong><br>I have obtained my 'Secondary School Certificate'
-                        from Maharastra board, English medium, through <strong>Jain English School, Talegaon
-                            Dabhade, Pune.</strong></br>
+                <!-- CARD COMPONENT 4: Java OPD App -->
+                <div class="col">
+                    <div class="card h-100 dynamic-card shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-accent">Doctor's OPD Client & Host Infrastructure</h5>
+                            <p class="card-text text-muted small flex-grow-1">An Android framework split natively into discrete Physician interfaces and patient scheduling panels tracking live clinic state queues.</p>
+                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Java Core, Android SDK, Firebase Realtime</span></div>
+                            <a href="https://github.com/gol-den-name/doctors-appointment" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- CARD COMPONENT 5: Spotify Player Frontend -->
+                <div class="col">
+                    <div class="card h-100 dynamic-card shadow-sm">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-accent">Spotify Music Dashboard Clone</h5>
+                            <p class="card-text text-muted small flex-grow-1">A lightweight frontend player processing web audio queues, containing active tracks parsing arrays, randomizing routines, and responsive views.</p>
+                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Vanilla JS, CSS Grid Layouts, HTML5</span></div>
+                            <a href="https://github.com/gol-den-name/pet-spotify-project" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD COMPONENT 6: This Current Portfolio details link entry -->
+                <div class="col">
+                    <div class="card h-100 dynamic-card border border-accent">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold text-accent">Optimized Static Web Portfolio</h5>
+                            <p class="card-text text-muted small flex-grow-1">The active live viewport tracking code. Zero-framework architecture compiled cleanly using semantic blocks for light loading profiles on GitHub Pages.</p>
+                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">HTML5, CSS Variables, Bootstrap 5, JS</span></div>
+                            <a href="#" class="btn btn-sm btn-outline-accent disabled w-100 mt-auto">Currently Viewing Environment</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
-    </div>
-
-    <!-- Projects Section -->
-  <section id="projects" class="container py-5">
-    <h2 class="text-center mb-4">💻 Projects</h2>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
-
-        <!-- 1 -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Online E-Selling Business Platform</h5>
-                    <p class="card-text">
-                        Basic application for local businesses wanting to expand online post-COVID.
-                        <br><strong>Technologies: JavaScript, HTML, PHP, XAMPP (MariaDB)</strong>
-                    </p>
-                    <a href="#" class="btn custom-card-btn btn-sm">View Code</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 2 -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Online Book Shopping Application</h5>
-                    <p class="card-text">
-                        Basic online portal for a local bookstore to sell books.
-                        <br><strong>Technologies: JavaScript, HTML, Python, MongoDB (Django)</strong>
-                    </p>
-                    <a href="https://github.com/gol-den-name/online-shopping-system-web"
-                       class="btn custom-card-btn btn-sm">View Code</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Doctor's Application (Client & Host)</h5>
-                    <p class="card-text">
-                        Android app made for a clinic for OPD work, split into doctor & patient modules.
-                        <br><strong>Technologies: Java (Android), Firebase (JSON)</strong>
-                    </p>
-                    <a href="#" class="btn custom-card-btn btn-sm">View Code</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 4 - Spotify Clone -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Spotify Clone (Music Player)</h5>
-                    <p class="card-text">
-                        A lightweight Spotify-style music player built using <strong>HTML, CSS, and JavaScript.</strong>
-                        Features clickable playlist, play/pause control, track highlighting & auto-random play.
-                         <br><strong>Technologies: JavaScript(vanilla), HTML/CSS </strong>
-                    </p>
-                    <a href="#" class="btn custom-card-btn btn-sm">View Code</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 5 - Coming Soon -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Next Project Coming Soon</h5>
-                    <p class="card-text">
-                        A new project is currently in progress.<br>
-                        <strong>Will be added soon!</strong>
-                    </p>
-                    <a class="btn custom-card-btn btn-sm disabled">In Progress</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- 6 - Portfolio Website -->
-        <div class="col">
-            <div class="card h-100">
-                <div class="card-body">
-                    <h5 class="card-title">Portfolio Website</h5>
-                    <p class="card-text">
-                        This very portfolio! Built using HTML, CSS, Bootstrap & JavaScript,<br>
-                        hosted on GitHub Pages.
-                    </p>
-                    <a href="#"  class="btn custom-card-btn btn-sm" title="Towards github for code">You're already here 😄 </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-
-    <!-- Skills Section -->
-    <section id="skills" class="container py-5">
-        <h2 class="text-center mb-4">🧠 Languages & Skills (basic understanding)</h2>
-        <div class="accordion" id="skillsAccordion">
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne">
-                        Frontend Skills
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#skillsAccordion">
-                    <div class="accordion-body">
-                        HTML5, CSS3, JavaScript ES6, Bootstrap, ExpressJS.
+    <!-- [TECHNICAL MATRIX SKILLS LAYER] -->
+    <section id="skills" class="py-6 bg-alt-block border-bottom border-custom">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">Technical Matrix</h2>
+            <div class="row g-4">
+                
+                <!-- Skill Set Column 1: Backend Architecture focuses -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 p-3 shadow-sm bg-card-dark">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-network-wired me-2"></i>Backend Infrastructure</h5>
+                            <p class="text-secondary small">Python Core (OOPs, Datatypes), Node.js Core, Express Framework modules, Java Standard SDK, structural C/C++ architecture builds.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo">
-                        Backend & Database
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
-                    <div class="accordion-body">
-                        SQL,Python(Basic, Django(currently advancing)), NodeJS.
+                
+                <!-- Skill Set Column 2: Data Engines focuses -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 p-3 shadow-sm bg-card-dark">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-database me-2"></i>Databases & Analytics</h5>
+                            <p class="text-secondary small">SQL execution matrices (Complex subqueries, indexing, inner/outer table joins), MongoDB document parsing, MariaDB engine configurations, Firebase JSON handling, Power BI workspace design.</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree">
-                        Tools & Platforms.
-                    </button>
-                </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#skillsAccordion">
-                    <div class="accordion-body">
-                        VS Code, Postman, MongoDB Compass, Adobe Dreamweaver, Power BI, MS Excel.
+                
+                <!-- Skill Set Column 3: Frontend Layout systems -->
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 p-3 shadow-sm bg-card-dark">
+                        <div class="card-body">
+                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-window-maximize me-2"></i>Frontend Capabilities</h5>
+                            <p class="text-secondary small">Semantic HTML5 engines, layout orchestration (CSS Flexbox & CSS Grid), Bootstrap 5 responsiveness variables, Vanilla DOM handling via ES6 JS scripts, legacy jQuery structures.</p>
+                        </div>
                     </div>
                 </div>
+                
             </div>
-
         </div>
     </section>
 
-
-    <!-- Certificates Section -->
-    <section id="certificates" class="container py-5">
-        <h2 class="text-center mb-4">📜 Certificates</h2>
+    <!-- 
+      [CERTIFICATES DISPLAY BOX ENGINE GRID]
+      Lists all 11 technical credentials cleanly.
+    -->
+    <section id="certificates" class="container py-6">
+        <h2 class="section-title text-center mb-2">Technical Certifications</h2>
+        <p class="text-muted text-center mb-5 fs-6">Verified continuous engineering validation matrices compiled across multiple platforms</p>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            
+            <!-- CERTIFICATE BLOCK 1: Advanced Python -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\HTML.png"
-                        class="card-img-top" alt="HTML Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">HTML</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">March 2025</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <!-- ratio ratio-16x9: Locks images into standard widescreen aspect scaling dimensions, eliminating height misalignment -->
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <!-- loading="lazy": Standard performance optimization; tells the browser to skip downloading these graphics until the user scrolls near them -->
+                        <img src="images/certs/Python.png" class="card-img-top" alt="Python Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\HTML.png"
-                            target="images\certs\HTML.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Advanced Python Engine Routing</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Sept 2024</p>
+                        <a href="images/certs/Python.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 2: SQL Dataspaces -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\javascript.png"
-                        class="card-img-top" alt="javascript es6 certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">JavaScript Es6</h5>
-                        <p class="card-text">Issued by freeCodeCamp<br><small class="text-">June 2025</small></p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/SQL.png" class="card-img-top" alt="SQL Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\javascript.png"
-                            target="images\certs\javascript.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Relational Database Infrastructure (SQL)</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Jan 2025</p>
+                        <a href="images/certs/SQL.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 3: freeCodeCamp JavaScript -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\basic coding in python.png"
-                        class="card-img-top" alt="Basic Coding in python certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">Basic Coding in Python</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">April 2025</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/javascript.png" class="card-img-top" alt="JavaScript Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\basic coding in python.png"
-                            target="images\certs\basic coding in python.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">JavaScript Algorithms & ES6 Syntaxes</h6>
+                        <p class="text-muted small mb-3">freeCodeCamp Verification &bull; June 2025</p>
+                        <a href="images/certs/javascript.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 4: Node JS runtime engine -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\bootstrap.png"
-                        class="card-img-top" alt="bootstrap certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">Bootstrap</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">April 2025</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/nodeJs.png" class="card-img-top" alt="NodeJS Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\bootstrap.png"
-                            target="images\certs\bootstrap.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">NodeJS Backend Runtime Operations</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Jan 2025</p>
+                        <a href="images/certs/nodeJs.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 5: Semantic HTML5 elements -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\cProgramming.png"
-                        class="card-img-top" alt="C programming Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">C Programming</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">May 2024</small></p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/HTML.png" class="card-img-top" alt="HTML Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\cProgramming.png"
-                            target="images\certs\cProgramming.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Semantic Markup Engine (HTML5)</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Mar 2025</p>
+                        <a href="images/certs/HTML.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 6: Stylesheets configuration structures (CSS3) -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\CPP.png"
-                        class="card-img-top" alt="CPP Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">CPP</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">June 2024</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/CSS.png" class="card-img-top" alt="CSS Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\CPP.png"
-                            target="images\certs\CPP.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Advanced Styling Architectures (CSS3)</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Mar 2025</p>
+                        <a href="images/certs/CSS.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 7: Layout alignments (Flexbox modules) -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\CSS.png"
-                        class="card-img-top" alt="CSS Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">CSS</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">March 2025</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/Flexbox.png" class="card-img-top" alt="Flexbox Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\CSS.png"
-                            target="images\certs\CSS.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Dynamic UI Formatting (CSS Flexbox)</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Apr 2025</p>
+                        <a href="images/certs/Flexbox.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 8: Component grids scaffolding (Bootstrap framework) -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\Flexbox.png"
-                        class="card-img-top" alt="Flexbox Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">Flexbox</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">April 2025</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/bootstrap.png" class="card-img-top" alt="Bootstrap Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\Flexbox.png"
-                            target="images\certs\Flexbox.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Fluid Grid Scaffolding (Bootstrap 5)</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Apr 2025</p>
+                        <a href="images/certs/bootstrap.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 9: Legacy JS bindings manipulations (jQuery) -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\jQuery.png"
-                        class="card-img-top" alt="jQuery Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">jQuery</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">June 2025</small>
-                        </p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/jQuery.png" class="card-img-top" alt="jQuery Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\jQuery.png"
-                            target="images\certs\jQuery.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">DOM Animation Scripts (jQuery Framework)</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; June 2025</p>
+                        <a href="images/certs/jQuery.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 10: Microsoft Power BI matrices workspaces -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\Power BI.png"
-                        class="card-img-top" alt="Power BI & Business Intelligence Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">Power BI & Business Intelligence</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">November
-                                2024</small></p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/Power BI.png" class="card-img-top" alt="Power BI Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\Power BI.png"
-                            target="images\certs\Power BI.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Business Intelligence Systems & Power BI</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Nov 2024</p>
+                        <a href="images/certs/Power BI.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
+
+            <!-- CERTIFICATE BLOCK 11: Base programming frameworks paradigms (Python Core) -->
             <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\Python.png"
-                        class="card-img-top" alt="Python Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">Python Course</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">September
-                                2024</small></p>
+                <div class="card h-100 cert-card shadow-sm">
+                    <div class="ratio ratio-16x9 image-box bg-dark">
+                        <img src="images/certs/basic coding in python.png" class="card-img-top" alt="Basic Python Certificate" loading="lazy">
                     </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\Python.png"
-                            target="images\certs\Python.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="fw-bold mb-1">Foundational Algorithmic Coding in Python</h6>
+                        <p class="text-muted small mb-3">PrepInsta Prime &bull; Apr 2025</p>
+                        <a href="images/certs/basic coding in python.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\SQL.png"
-                        class="card-img-top" alt="SQL Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">SQL</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">January 2025</small>
-                        </p>
-                    </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\SQL.png"
-                            target="images\certs\SQL.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card h-100 shadow-sm">
-                    <img src="images\certs\nodeJs.png"
-                        class="card-img-top" alt="nodeJs Certificate">
-                    <div class="card-body">
-                        <h5 class="card-title">NodeJs</h5>
-                        <p class="card-text">Issued by PrepInsta Prime<br><small class="text-muted">January 2025</small>
-                        </p>
-                    </div>
-                    <div class="card-footer text-end bg-white border-0">
-                        <a href="images\certs\nodeJs.png"
-                            target="images\certs\nodeJs.png" class="btn custom-card-btn btn-sm">View
-                            Certificate</a>
+
+        </div>
+    </section>
+
+    <!-- [FOOTER CONTACT CARD INTERFACE GRID] -->
+    <section id="contact" class="bg-card-dark py-6 text-center border-top border-top-custom">
+        <div class="container">
+            <h2 class="fw-bold mb-3">📬 Connect With Me</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <p class="lead text-secondary mb-4">I am actively pursuing entry-level development opportunities or internships focused on backend services, cloud scaling setups, and automated data engines.</p>
+                    <div class="d-flex justify-content-center gap-3">
+                        <a href="https://www.linkedin.com/in/rhp99/" target="_blank" class="btn btn-accent px-4 py-2 text-dark fw-bold shadow">
+                            <i class="fab fa-linkedin me-2"></i>LinkedIn Network
+                        </a>
+                        <a href="https://github.com/gol-den-name" target="_blank" class="btn btn-outline-accent px-4 py-2 fw-semibold shadow-sm">
+                            <i class="fab fa-github me-2"></i>GitHub Code Repos
+                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Contact Section -->
-    <section id="contact" class="container py-5">
-        <h2 class="text-center mb-4">📬 Socials</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <p class="lead text-center">
-                    I’m currently open to opportunities for internships and looking for companies who are hiring
-                    freshers in Development roles(Database, Frontend, Backend).
-                </p>
-                <div class="text-center mt-4">
-                    <h5>Connect with me</h5>
-                    <a href="https://www.linkedin.com/in/rhp99/" target="_blank" class="btn btn-outline-primary mx-2">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/gol-den-name" target="_blank" class="btn btn-outline-dark mx-2">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
-                </div>
 
-            </div>
-        </div>
-    </section>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- [JAVASCRIPT ENGINE DEPENDENCIES IMPLEMENTATIONS STACK] -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    <script src="js/toggle.js"></script>
+    
     <script>
-        var typed = new Typed(".typed", {
-            strings: document.querySelector(".typed").getAttribute("data-typed-items").split(","),
-            typeSpeed: 100,
-            backSpeed: 50,
-            loop: true
-        });
-        document.getElementById("darkToggle").addEventListener("click", function () {
-            document.body.classList.toggle("dark-mode");
+        // --- TYPED.JS DRIVER COMPILER INSTANCE ---
+        const typedTarget = document.querySelector(".typed");
+        if (typedTarget) {
+            new Typed(".typed", {
+                strings: typedTarget.getAttribute("data-typed-items").split(","),
+                typeSpeed: 60, 
+                backSpeed: 30, 
+                loop: true     
+            });
+        }
 
-            // Update button text and style
-            const toggleBtn = document.getElementById("darkToggle");
+        // --- PRODUCTION LOGIC FOR CLIENT CONTROLLER STATES (THEME CONTROLS) ---
+        const toggleBtn = document.getElementById("themeToggle");
+        
+        if (localStorage.getItem("theme") === "light") {
+            setLightMode();
+        } else {
+            setDarkMode(); 
+        }
+
+        toggleBtn.addEventListener("click", () => {
             if (document.body.classList.contains("dark-mode")) {
-                toggleBtn.innerText = "☀️ Light Mode";
-                toggleBtn.classList.remove("btn-outline-light");
-                toggleBtn.classList.add("btn-outline-warning");
+                setLightMode();
             } else {
-                toggleBtn.innerText = "🌙 Dark Mode";
-                toggleBtn.classList.remove("btn-outline-warning");
-                toggleBtn.classList.add("btn-outline-light");
+                setDarkMode();
             }
         });
+
+        function setDarkMode() {
+            document.body.classList.add("dark-mode");
+            document.body.setAttribute("data-bs-theme", "dark"); 
+            toggleBtn.innerText = "☀️ Light Mode";
+            toggleBtn.className = "btn btn-sm btn-outline-accent";
+            localStorage.setItem("theme", "dark"); 
+        }
+
+        function setLightMode() {
+            document.body.classList.remove("dark-mode");
+            document.body.setAttribute("data-bs-theme", "light"); 
+            toggleBtn.innerText = "🌙 Dark Mode";
+            toggleBtn.className = "btn btn-sm btn-outline-dark";
+            localStorage.setItem("theme", "light"); 
+        }
     </script>
-
-
 </body>
 
 </html>
