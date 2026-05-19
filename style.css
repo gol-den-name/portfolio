@@ -296,3 +296,19 @@ body:not(.dark-mode) .hero-section .text-light {
   /* Forces the running Typed.js dynamic text array to render in a deep slate tone */
   color: #1e293b !important;
 }
+/* =========================================
+   HERO BUTTON LIGHT MODE FIX
+   =========================================
+*/
+body:not(.dark-mode) .hero-section .btn-outline-light {
+  /* Changes outline and text color to deep slate to contrast with the light theme */
+  color: #0f172a !important;
+  border-color: #64748b !important;
+}
+
+body:not(.dark-mode) .hero-section .btn-outline-light:hover {
+  /* Gives it a smooth dark fill when recruiters hover over it */
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+}
