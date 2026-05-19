@@ -1,20 +1,19 @@
-  /* 
-  =========================================
+  /* =========================================
   GLOBAL CENTRAL VARIABLE SYSTEM CONTROLLERS
   =========================================
-  Stores custom hexadecimal keys centrally so color configurations remain manageable.
+  Premium Slate & Sky Blue palette tailored for an enterprise tech look.
 */
 :root {
-  --bg-dark-base: #0f111a;       /* Deep baseline canvas palette */
-  --bg-dark-alt: #151824;        /* Split section variance shading token */
-  --bg-dark-card: #1a1d2e;       /* Card component baseline surfaces */
-  --color-accent-neon: #00d2d3;  /* Core bright snappy cyber themed highlight accent */
-  --border-color-dark: #22263f;  /* Understated dark mode element borders */
+  /* Dark Mode Palette Core */
+  --bg-dark-base: #0f172a;       /* Deep Slate Blue Canvas */
+  --bg-dark-alt: #1e293b;        /* Split section variance shading token */
+  --bg-dark-card: #1e293b;       /* Card and accordion surface surfaces */
+  --color-accent-neon: #38bdf8;  /* Professional Sky Blue Accent */
+  --border-color-dark: #334155;  /* Understated slate element borders */
   --transition-speed: 0.25s;     /* Standardized speed mapping variables for physics animations */
 }
 
-/* 
-  Global Anchor Adjustments prevents browser transitions from skipping jarringly, 
+/* Global Anchor Adjustments prevents browser transitions from skipping jarringly, 
   and offsets heights cleanly against headers 
 */
 html {
@@ -22,16 +21,19 @@ html {
   scroll-padding-top: 75px; /* Matches exact vertical navbar footprints */
 }
 
-/* 
-  Ensures layout wrapper surfaces inherit the correct background token explicitly 
+/* Ensures layout wrapper surfaces inherit the correct background token explicitly 
 */
 body.dark-mode {
   background-color: var(--bg-dark-base);
-  color: #f1f2f6;
+  color: #f8fafc;
 }
 
-/* 
-  =========================================
+/* Hard override for text utility states inside dark mode elements */
+body.dark-mode .text-muted {
+  color: #94a3b8 !important;   /* Soft slate gray for highly readable descriptions */
+}
+
+/* =========================================
   TYPOGRAPHY & COMPONENT INTERACTIVE STYLINGS
   =========================================
 */
@@ -43,12 +45,12 @@ body.dark-mode {
 .btn-accent {
   background-color: var(--color-accent-neon);
   border-color: var(--color-accent-neon);
-  color: #0f111a;
+  color: #0f172a;
 }
 .btn-accent:hover {
-  background-color: #00b3b4; /* Slightly darkened shade for hover contrast */
-  border-color: #00b3b4;
-  color: #0f111a;
+  background-color: #0ea5e9; /* Slightly darkened slate-sky for hover contrast */
+  border-color: #0ea5e9;
+  color: #ffffff;
 }
 
 /* Outline Interactive Action Button Rules */
@@ -58,28 +60,26 @@ body.dark-mode {
 }
 .btn-outline-accent:hover {
   background-color: var(--color-accent-neon);
-  color: #0f111a;
+  color: #0f172a;
 }
 
-/* 
-  =========================================
+/* =========================================
   NAVBAR TRANSBORDER MECHANICS & OVERLAY BLURS
   =========================================
 */
 .navbar-custom {
-  background-color: rgba(15, 17, 26, 0.9) !important; /* Semi-opaque tracking hex alpha channel */
+  background-color: rgba(15, 23, 42, 0.85) !important; /* Semi-opaque tracking hex alpha channel */
   backdrop-filter: blur(10px);                        /* Native browser glassmorphism styling mechanics blur filters */
   border-bottom: 1px solid var(--border-color-dark);
 }
 
-/* 
-  =========================================
+/* =========================================
   SECTION BLOCKS SCAFFOLDING VARIABLES
   =========================================
 */
 .hero-section {
-  min-height: 85vh; /* Scales view container footprint to 85% of dynamic viewport viewport height */
-  background: radial-gradient(circle at top right, #1a1e36 0%, var(--bg-dark-base) 70%); /* Dynamic spatial depth gradient tracking */
+  min-height: 85vh; /* Scales view container footprint to 85% of dynamic viewport height */
+  background: radial-gradient(circle at top right, #1e293b 0%, var(--bg-dark-base) 70%); /* Dynamic spatial depth gradient tracking */
   padding: 4rem 0;
 }
 
@@ -120,12 +120,11 @@ body.dark-mode {
   object-fit: cover;    /* Centers and scales graphics inside the image container dimensions */
 }
 
-/* 
-  =========================================
+/* =========================================
   DYNAMIC CARD DEPLOYMENT INTERACTIVE FILTERS
   =========================================
 */
-.dynamic-card, .cert-card {
+.dynamic-card, .cert-card, .accordion-item {
   background-color: var(--bg-dark-card) !important;
   border: 1px solid var(--border-color-dark) !important;
   /* cubic-bezier transition curves deliver punchier micro-interactions on hover */
@@ -137,13 +136,13 @@ body.dark-mode {
 /* Elevates card objects up slightly and creates a bright neon glow matching your theme variables */
 .dynamic-card:hover, .cert-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 210, 211, 0.15) !important; /* Alpha maps neon blue drop glows */
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.12) !important; /* Alpha maps sky blue drop glows */
   border-color: var(--color-accent-neon) !important;
 }
 
 /* Clean dashed tracking outline helper states for ongoing work objects */
 .border-dashed {
-  border: 2px dashed #3a3f68 !important;
+  border: 2px dashed #334155 !important;
   background-color: transparent !important;
 }
 
@@ -163,36 +162,137 @@ body.dark-mode {
   transform: scale(1.04);
 }
 
-/* 
-  =========================================
+/* =========================================
   LIGHT THEME REGRESSION LOGICAL INTERFACES
   =========================================
-  Applies overrides only when '.dark-mode' class is explicitly stripped out by JS scripts.
+  Applies overrides cleanly only when '.dark-mode' class is explicitly stripped out by JS scripts.
 */
 body:not(.dark-mode) {
-  background-color: #f8f9fa;
-  color: #2d3436;
+  background-color: #f8fafc;     /* Clean light off-white slate base */
+  color: #0f172a;                /* Deep slate for crisp text reading */
 }
+
+body:not(.dark-mode) .text-muted {
+  color: #64748b !important;     /* Mid-tone slate gray for accessible light mode body copy */
+}
+
 body:not(.dark-mode) .navbar-custom {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  border-bottom: 1px solid #dfe6e9;
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  border-bottom: 1px solid #e2e8f0;
 }
+
 body:not(.dark-mode) .bg-alt-block {
-  background-color: #f1f2f6 !important;
+  background-color: #f1f5f9 !important; /* Soft gray-blue background split */
 }
+
 body:not(.dark-mode) .dynamic-card, 
 body:not(.dark-mode) .cert-card,
 body:not(.dark-mode) .profile-card,
-body:not(.dark-mode) .bg-card-dark {
+body:not(.dark-mode) .bg-card-dark,
+body:not(.dark-mode) .accordion-item {
   background-color: #ffffff !important;
   border-color: #e2e8f0 !important;
 }
+
 body:not(.dark-mode) .border-custom,
 body:not(.dark-mode) .image-box {
   border-color: #e2e8f0 !important;
 }
+
 body:not(.dark-mode) .dynamic-card:hover, 
 body:not(.dark-mode) .cert-card:hover {
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
-  border-color: var(--color-accent-neon) !important;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06) !important;
+  border-color: #0284c7 !important;
+}
+
+/* Adjust button states dynamically in Light mode so it doesn't look washed out */
+body:not(.dark-mode) .btn-outline-accent {
+  color: #0284c7;                /* Darker sky blue for visibility compliance */
+  border-color: #0284c7;
+}
+
+body:not(.dark-mode) .btn-outline-accent:hover {
+  background-color: #0284c7;
+  color: #ffffff;
+}
+
+/* =========================================
+   ACCORDION MUTATION STYLES (DARK & LIGHT)
+   =========================================
+*/
+
+/* --- DARK MODE SETTINGS (Default state based on your body class) --- */
+body.dark-mode .accordion-item {
+  background-color: var(--bg-dark-card) !important;
+  border: 1px solid var(--border-color-dark) !important;
+}
+
+body.dark-mode .accordion-button {
+  background-color: var(--bg-dark-card) !important;
+  color: #f8fafc !important;
+}
+
+/* Handles arrow tinting when the panel is collapsed in dark mode */
+body.dark-mode .accordion-button::after {
+  filter: invert(1) grayscale(1) brightness(2);
+}
+
+/* Styles the active, open accordion button in dark mode */
+body.dark-mode .accordion-button:not(.collapsed) {
+  background-color: #1e293b !important;
+  color: var(--color-accent-neon) !important;
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .accordion-body {
+  background-color: #131d31 !important; /* Slightly darker body backdrop */
+  color: #f8fafc;
+}
+
+
+/* --- LIGHT MODE OVERRIDES --- */
+body:not(.dark-mode) .accordion-item {
+  background-color: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+}
+
+body:not(.dark-mode) .accordion-button {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+/* Resets arrow filter mechanics for clear visibility on white layouts */
+body:not(.dark-mode) .accordion-button::after {
+  filter: none;
+}
+
+/* Styles the active, open accordion button in light mode */
+body:not(.dark-mode) .accordion-button:not(.collapsed) {
+  background-color: #f1f5f9 !important;
+  color: #0284c7 !important; /* Professional deeper sky blue for light mode clarity */
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+body:not(.dark-mode) .accordion-body {
+  background-color: #f8fafc !important;
+  color: #0f172a;
+}
+
+/* =========================================
+   HERO CANVAS LIGHT THEME RESPONSIVENESS FIX
+   =========================================
+*/
+body:not(.dark-mode) .hero-section {
+  /* Shifts the background to a clean, bright gradient when light mode is selected */
+  background: radial-gradient(circle at top right, #e2e8f0 0%, #f8fafc 70%) !important;
+}
+
+body:not(.dark-mode) .hero-section p.text-secondary {
+  /* Ensures any auxiliary muted paragraph or subtitle tags switch to readable gray */
+  color: #475569 !important;
+}
+
+body:not(.dark-mode) .hero-section .text-light {
+  /* Forces the running Typed.js dynamic text array to render in a deep slate tone */
+  color: #1e293b !important;
 }
