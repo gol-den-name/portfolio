@@ -7,13 +7,13 @@
     <!-- [METADATA] Critical for mobile responsiveness; configures screen mapping scales to match modern mobile viewports -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rochan Patwardhan | Portfolio</title>
-    
+
     <!-- [EXTERNAL DEPENDENCY] Bootstrap 5.3.3 Core compiled styles wrapper handling columns, grids, and components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    
+
     <!-- [EXTERNAL DEPENDENCY] FontAwesome CDN serving clean vector icons for technical tags and contact blocks -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    
+
     <!-- [LOCAL PATH] Custom stylesheet for colors, transitions, and layout tweaks. Absolute path is relative to help GitHub Pages resolve it -->
     <link href="style.css" rel="stylesheet" />
 </head>
@@ -23,6 +23,7 @@
   We add the explicit 'dark-mode' class and Bootstrap's 'data-bs-theme="dark"' attribute directly onto the body tag.
   This forces the layout and all Bootstrap sub-components to instantly boot up in a dark theme by default, avoiding any flash of light mode.
 -->
+
 <body class="dark-mode" data-bs-theme="dark">
 
     <!-- 
@@ -35,12 +36,13 @@
         <div class="container">
             <!-- Brand Logo utilizing the high-impact color token class -->
             <a class="navbar-brand fw-bold text-accent" href="#home">Rochan.dev</a>
-            
+
             <!-- Mobile Hamburger Toggle Element (Visible only on small screens and devices) -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <!-- Collapsible Links wrapper mapped using modern CSS Flex layout properties to right-align menus -->
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav align-items-center gap-2">
@@ -50,7 +52,7 @@
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                     <li class="nav-item"><a class="nav-link" href="#certificates">Certificates</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    
+
                     <!-- Dynamic client-side theme switcher module element -->
                     <li class="nav-item ms-lg-2">
                         <button id="themeToggle" class="btn btn-sm btn-outline-accent">☀️ Light Mode</button>
@@ -67,26 +69,43 @@
     -->
     <section id="home" class="hero-section d-flex align-items-center justify-content-center text-center">
         <div class="container">
-            <!-- display-2 & fw-extrabold: Renders high-impact headers tailored to grab a recruiter's eye instantly -->
+            <!-- Main High-Impact Header -->
             <h1 class="display-2 fw-extrabold mb-2">Hi, I'm <span class="text-accent">Rochan Patwardhan</span></h1>
-            
-            <!-- 
-              [TYPED.JS INTEGRATION CONTAINER]
-              - class="typed": Hook used by the JavaScript engine at the bottom of the page to find this element.
-              - data-typed-items: A clean comma-separated list storing your dynamic engineering sub-titles.
-            -->
+
+            <!-- Typed.js Text Integration -->
             <p class="lead fs-3 mb-4 text-secondary">
-                An aspiring Developer | <span class="typed text-light fw-semibold" data-typed-items="Python Engine Development, Django Applications, SQL Database Design, Frontend UI Architectures"></span>
+                An aspiring Developer | <span class="typed text-light fw-semibold"
+                    data-typed-items="Python Engine Development, Django Applications, SQL Database Design, Frontend UI Architectures"></span>
             </p>
-            
-            <!-- Quick Action Links for clean user navigation -->
-            <div class="d-flex justify-content-center gap-3">
+
+            <!-- Quick Action Navigation Links -->
+            <div class="d-flex justify-content-center gap-3 mb-4">
                 <a href="#projects" class="btn btn-accent px-4 py-2 fw-semibold shadow">Explore Projects</a>
                 <a href="#contact" class="btn btn-outline-light px-4 py-2 fw-semibold">Get In Touch</a>
             </div>
+
+            <!-- STATS & INTERACTION HUB -->
+            <div class="d-flex flex-column align-items-center justify-content-center gap-3">
+
+                <!-- Interactive Show Interest Action Button -->
+                <div>
+                    <button id="interest-btn"
+                        class="btn btn-accent px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
+                        <span>🤝 Show Interest</span>
+                        <span id="interest-count" class="badge bg-dark-base text-accent ms-1">...</span>
+                    </button>
+                </div>
+
+                <!-- Automated Total Page Views Track Badge -->
+                <div class="d-inline-block">
+                    <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgol-den-name.github.io%2Fportfolio&count_bg=%2338BDF8&title_bg=%231E293B&icon=&icon_color=%23E7E7E7&title=views&edge_flat=false"
+                        alt="Total Page Views Tracker" class="rounded shadow-sm"
+                        style="height: 38px; object-fit: contain;" />
+                </div>
+
+            </div>
         </div>
     </section>
-
     <!-- 
       [ABOUT ME SECTION]
       - py-6: Custom consistent vertical padding hook defined in style.css.
@@ -96,38 +115,47 @@
         <div class="container">
             <!-- Modern 2-column layout split: Text on the left, Profile box on the right -->
             <div class="row align-items-center g-5">
-                
+
                 <!-- LEFT COLUMN: Profile narrative & summary points -->
                 <div class="col-lg-7">
                     <h2 class="section-title mb-4">About Me</h2>
-                    <p class="lead text-secondary">I am a highly driven computer applications post-graduate, deeply passionate about constructing clean, high-performance web systems and logical data pipelines.</p>
-                    <p class="text-muted">My developmental architecture primarily focuses on building backend services utilizing <strong>Python and complex SQL structures</strong>, alongside designing responsive interfaces via <strong>Bootstrap, JavaScript, and Node.js components</strong>.</p>
-                    
+                    <p class="lead text-secondary">I am a highly driven computer applications post-graduate, deeply
+                        passionate about constructing clean, high-performance web systems and logical data pipelines.
+                    </p>
+                    <p class="text-muted">My developmental architecture primarily focuses on building backend services
+                        utilizing <strong>Python and complex SQL structures</strong>, alongside designing responsive
+                        interfaces via <strong>Bootstrap, JavaScript, and Node.js components</strong>.</p>
+
                     <!-- Bulleted array displaying quick high-level candidate insights layout -->
                     <ul class="list-unstyled mt-4 row g-3">
                         <div class="col-sm-6">
-                            <li><i class="fas fa-map-marker-alt text-accent me-2"></i><strong>Location:</strong> Pune, MH, India</li>
+                            <li><i class="fas fa-map-marker-alt text-accent me-2"></i><strong>Location:</strong> Pune,
+                                MH, India</li>
                         </div>
                         <div class="col-sm-6">
-                            <li><i class="fas fa-graduation-cap text-accent me-2"></i><strong>Education:</strong> MCA Graduate (2023)</li>
+                            <li><i class="fas fa-graduation-cap text-accent me-2"></i><strong>Education:</strong> MCA
+                                Graduate (2023)</li>
                         </div>
                         <div class="col-sm-12">
-                            <li><i class="fas fa-gamepad text-accent me-2"></i><strong>Interests:</strong> Algorithm Optimization, Tech Reading, High-Octane Gaming</li>
+                            <li><i class="fas fa-gamepad text-accent me-2"></i><strong>Interests:</strong> Algorithm
+                                Optimization, Tech Reading, High-Octane Gaming</li>
                         </div>
                     </ul>
                 </div>
-                
+
                 <!-- RIGHT COLUMN: Elegant snapshot display card -->
                 <div class="col-lg-5 text-center">
                     <div class="profile-card p-4 rounded shadow">
                         <!-- profile-img: Locks proportions down to 1:1 using CSS parameters, completely removing photo stretching bugs -->
-                        <img src="photo_pic.png" alt="Rochan Harish Patwardhan" class="img-fluid rounded-circle mb-3 border border-4 border-accent profile-img" />
+                        <img src="photo_pic.png" alt="Rochan Harish Patwardhan"
+                            class="img-fluid rounded-circle mb-3 border border-4 border-accent profile-img" />
                         <h3 class="fw-bold mb-1">Rochan H. Patwardhan</h3>
                         <p class="text-accent small fw-semibold mb-3">Backend Engineering Intern / Candidate</p>
-                        <p class="small text-muted mb-0">D.Y Patil Institute of Management & Computer Applications<br>Akurdi, Pune</p>
+                        <p class="small text-muted mb-0">D.Y Patil Institute of Management & Computer
+                            Applications<br>Akurdi, Pune</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -136,64 +164,77 @@
       [ACADEMICS SECTION]
       - bg-alt-block: Custom light gray/dark blue background toggle layer to break up long blocks of text.
     -->
-   <section id="academics" class="py-6 bg-alt-block border-bottom border-custom">
+    <section id="academics" class="py-6 bg-alt-block border-bottom border-custom">
         <div class="container">
             <h2 class="section-title text-center mb-5">Academic Record</h2>
-            
+
             <div class="accordion shadow-sm" id="academicsAccordion">
-                
+
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingMCA">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMCA" aria-expanded="true" aria-controls="collapseMCA">
+                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseMCA" aria-expanded="true" aria-controls="collapseMCA">
                             2021 - 2023 &nbsp;|&nbsp; Masters in Computer Application (MCA)
                         </button>
                     </h2>
-                    <div id="collapseMCA" class="accordion-collapse collapse show" aria-labelledby="headingMCA" data-bs-parent="#academicsAccordion">
+                    <div id="collapseMCA" class="accordion-collapse collapse show" aria-labelledby="headingMCA"
+                        data-bs-parent="#academicsAccordion">
                         <div class="accordion-body">
-                            <span class="badge bg-success text-white mb-2 fs-6 fw-bold">75.11% Aggregate (CGPA 8.05)</span>
-                            <p class="mb-0 text-muted">Savitribai Phule Pune University &bull; <em>D.Y Patil Institute of Management and Computer Applications, Akurdi, Pune.</em></p>
+                            <span class="badge bg-success text-white mb-2 fs-6 fw-bold">75.11% Aggregate (CGPA
+                                8.05)</span>
+                            <p class="mb-0 text-muted">Savitribai Phule Pune University &bull; <em>D.Y Patil Institute
+                                    of Management and Computer Applications, Akurdi, Pune.</em></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingBCA">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseBCA" aria-expanded="false" aria-controls="collapseBCA">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseBCA" aria-expanded="false" aria-controls="collapseBCA">
                             2018 - 2021 &nbsp;|&nbsp; BBA in Computer Application (Formerly BCA)
                         </button>
                     </h2>
-                    <div id="collapseBCA" class="accordion-collapse collapse" aria-labelledby="headingBCA" data-bs-parent="#academicsAccordion">
+                    <div id="collapseBCA" class="accordion-collapse collapse" aria-labelledby="headingBCA"
+                        data-bs-parent="#academicsAccordion">
                         <div class="accordion-body">
                             <span class="badge bg-success text-white mb-2 fs-6 fw-bold">77.25% Aggregate</span>
-                            <p class="mb-0 text-muted">Savitribai Phule Pune University &bull; <em>D.Y Patil College of Arts Commerce and Science, Pimpri, Pune.</em></p>
+                            <p class="mb-0 text-muted">Savitribai Phule Pune University &bull; <em>D.Y Patil College of
+                                    Arts Commerce and Science, Pimpri, Pune.</em></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingHSC">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseHSC" aria-expanded="false" aria-controls="collapseHSC">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseHSC" aria-expanded="false" aria-controls="collapseHSC">
                             2018 &nbsp;|&nbsp; Higher Secondary Certificate (HSC)
                         </button>
                     </h2>
-                    <div id="collapseHSC" class="accordion-collapse collapse" aria-labelledby="headingHSC" data-bs-parent="#academicsAccordion">
+                    <div id="collapseHSC" class="accordion-collapse collapse" aria-labelledby="headingHSC"
+                        data-bs-parent="#academicsAccordion">
                         <div class="accordion-body">
                             <span class="badge bg-secondary text-white mb-2 fs-6 fw-bold">54.46% Score</span>
-                            <p class="mb-0 text-muted">Maharashtra State Board (English Medium) &bull; <em>Indrayani Mahavidyalaya, Talegaon Dabhade, Pune.</em></p>
+                            <p class="mb-0 text-muted">Maharashtra State Board (English Medium) &bull; <em>Indrayani
+                                    Mahavidyalaya, Talegaon Dabhade, Pune.</em></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="headingSSC">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSSC" aria-expanded="false" aria-controls="collapseSSC">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseSSC" aria-expanded="false" aria-controls="collapseSSC">
                             2016 &nbsp;|&nbsp; Secondary School Certificate (SSC)
                         </button>
                     </h2>
-                    <div id="collapseSSC" class="accordion-collapse collapse" aria-labelledby="headingSSC" data-bs-parent="#academicsAccordion">
+                    <div id="collapseSSC" class="accordion-collapse collapse" aria-labelledby="headingSSC"
+                        data-bs-parent="#academicsAccordion">
                         <div class="accordion-body">
                             <span class="badge bg-secondary text-white mb-2 fs-6 fw-bold">66.60% Score</span>
-                            <p class="mb-0 text-muted">Maharashtra State Board (English Medium) &bull; <em>Jain English School, Talegaon Dabhade, Pune.</em></p>
+                            <p class="mb-0 text-muted">Maharashtra State Board (English Medium) &bull; <em>Jain English
+                                    School, Talegaon Dabhade, Pune.</em></p>
                         </div>
                     </div>
                 </div>
@@ -210,16 +251,21 @@
         <div class="container">
             <h2 class="section-title text-center mb-5">Production Work & Projects</h2>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                
+
                 <!-- CARD COMPONENT 1: Little Lemon Restaurant Web Application -->
                 <div class="col">
                     <!-- 'border-accent' highlights this project visually to match your primary backend stack -->
                     <div class="card h-100 dynamic-card shadow-sm border border-accent">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold text-accent">Little Lemon Restaurant Web App</h5>
-                            <p class="card-text text-muted small flex-grow-1">A dynamic restaurant web platform featuring custom view templates, clean URL routing structures, database models, and server-side logic rendering backend assets smoothly.</p>
-                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Python, Django framework, SQLite, HTML5 / CSS3</span></div>
-                            <a href="https://github.com/gol-den-name/little-lemon-project-django" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                            <p class="card-text text-muted small flex-grow-1">A dynamic restaurant web platform
+                                featuring custom view templates, clean URL routing structures, database models, and
+                                server-side logic rendering backend assets smoothly.</p>
+                            <div class="mt-3 mb-3"><span
+                                    class="badge bg-dark-subtle text-accent border border-custom">Python, Django
+                                    framework, SQLite, HTML5 / CSS3</span></div>
+                            <a href="https://github.com/gol-den-name/little-lemon-project-django"
+                                class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -229,10 +275,15 @@
                     <div class="card h-100 dynamic-card shadow-sm border border-accent">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold text-accent">Online Book Shopping Web-System</h5>
-                            <p class="card-text text-muted small flex-grow-1">A scalable e-commerce infrastructure supporting full book catalogs, user sessions, and document storage processing workflows.</p>
-                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Python, Django, MongoDB, ES6 JS</span></div>
+                            <p class="card-text text-muted small flex-grow-1">A scalable e-commerce infrastructure
+                                supporting full book catalogs, user sessions, and document storage processing workflows.
+                            </p>
+                            <div class="mt-3 mb-3"><span
+                                    class="badge bg-dark-subtle text-accent border border-custom">Python, Django,
+                                    MongoDB, ES6 JS</span></div>
                             <!-- target="_blank": Opens the user's explicit open-source link in a fresh, parallel browser tab structure safely -->
-                            <a href="https://github.com/gol-den-name/bookstore-python" target="_blank" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                            <a href="https://github.com/gol-den-name/bookstore-python" target="_blank"
+                                class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -244,9 +295,14 @@
                         <!-- d-flex flex-column: Allows the footer button link to always anchor cleanly to the exact same base line across varying descriptions -->
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold text-accent">Online E-Selling Platform</h5>
-                            <p class="card-text text-muted small flex-grow-1">A direct business application allowing localized brick-and-mortar merchants to launch standard digital store workflows cleanly.</p>
-                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">JavaScript, HTML, PHP, MariaDB</span></div>
-                            <a href="https://github.com/gol-den-name/online-shopping-system-web" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                            <p class="card-text text-muted small flex-grow-1">A direct business application allowing
+                                localized brick-and-mortar merchants to launch standard digital store workflows cleanly.
+                            </p>
+                            <div class="mt-3 mb-3"><span
+                                    class="badge bg-dark-subtle text-accent border border-custom">JavaScript, HTML, PHP,
+                                    MariaDB</span></div>
+                            <a href="https://github.com/gol-den-name/online-shopping-system-web"
+                                class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -256,9 +312,14 @@
                     <div class="card h-100 dynamic-card shadow-sm">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold text-accent">Doctor's OPD Client & Host Infrastructure</h5>
-                            <p class="card-text text-muted small flex-grow-1">An Android framework split natively into discrete Physician interfaces and patient scheduling panels tracking live clinic state queues.</p>
-                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Java Core, Android SDK, Firebase Realtime</span></div>
-                            <a href="https://github.com/gol-den-name/doctors-appointment" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                            <p class="card-text text-muted small flex-grow-1">An Android framework split natively into
+                                discrete Physician interfaces and patient scheduling panels tracking live clinic state
+                                queues.</p>
+                            <div class="mt-3 mb-3"><span
+                                    class="badge bg-dark-subtle text-accent border border-custom">Java Core, Android
+                                    SDK, Firebase Realtime</span></div>
+                            <a href="https://github.com/gol-den-name/doctors-appointment"
+                                class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -268,9 +329,14 @@
                     <div class="card h-100 dynamic-card shadow-sm">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold text-accent">Spotify Music Dashboard Clone</h5>
-                            <p class="card-text text-muted small flex-grow-1">A lightweight frontend player processing web audio queues, containing active tracks parsing arrays, randomizing routines, and responsive views.</p>
-                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">Vanilla JS, CSS Grid Layouts, HTML5</span></div>
-                            <a href="https://github.com/gol-den-name/pet-spotify-project" class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
+                            <p class="card-text text-muted small flex-grow-1">A lightweight frontend player processing
+                                web audio queues, containing active tracks parsing arrays, randomizing routines, and
+                                responsive views.</p>
+                            <div class="mt-3 mb-3"><span
+                                    class="badge bg-dark-subtle text-accent border border-custom">Vanilla JS, CSS Grid
+                                    Layouts, HTML5</span></div>
+                            <a href="https://github.com/gol-den-name/pet-spotify-project"
+                                class="btn btn-sm btn-accent text-dark fw-bold w-100 mt-auto">View Source Code</a>
                         </div>
                     </div>
                 </div>
@@ -280,9 +346,14 @@
                     <div class="card h-100 dynamic-card border border-accent">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold text-accent">Optimized Static Web Portfolio</h5>
-                            <p class="card-text text-muted small flex-grow-1">The active live viewport tracking code. Zero-framework architecture compiled cleanly using semantic blocks for light loading profiles on GitHub Pages.</p>
-                            <div class="mt-3 mb-3"><span class="badge bg-dark-subtle text-accent border border-custom">HTML5, CSS Variables, Bootstrap 5, JS</span></div>
-                            <a href="#" class="btn btn-sm btn-outline-accent disabled w-100 mt-auto">Currently Viewing Environment</a>
+                            <p class="card-text text-muted small flex-grow-1">The active live viewport tracking code.
+                                Zero-framework architecture compiled cleanly using semantic blocks for light loading
+                                profiles on GitHub Pages.</p>
+                            <div class="mt-3 mb-3"><span
+                                    class="badge bg-dark-subtle text-accent border border-custom">HTML5, CSS Variables,
+                                    Bootstrap 5, JS</span></div>
+                            <a href="#" class="btn btn-sm btn-outline-accent disabled w-100 mt-auto">Currently Viewing
+                                Environment</a>
                         </div>
                     </div>
                 </div>
@@ -296,37 +367,45 @@
         <div class="container">
             <h2 class="section-title text-center mb-5">Technical Matrix</h2>
             <div class="row g-4">
-                
+
                 <!-- Skill Set Column 1: Backend Architecture focuses -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 p-3 shadow-sm bg-card-dark">
                         <div class="card-body">
-                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-network-wired me-2"></i>Backend Infrastructure</h5>
-                            <p class="text-secondary small">Python Core (OOPs, Datatypes), Node.js Core, Express Framework modules, Java Standard SDK, structural C/C++ architecture builds.</p>
+                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-network-wired me-2"></i>Backend
+                                Infrastructure</h5>
+                            <p class="text-secondary small">Python Core (OOPs, Datatypes), Node.js Core, Express
+                                Framework modules, Java Standard SDK, structural C/C++ architecture builds.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Skill Set Column 2: Data Engines focuses -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 p-3 shadow-sm bg-card-dark">
                         <div class="card-body">
-                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-database me-2"></i>Databases & Analytics</h5>
-                            <p class="text-secondary small">SQL execution matrices (Complex subqueries, indexing, inner/outer table joins), MongoDB document parsing, MariaDB engine configurations, Firebase JSON handling, Power BI workspace design.</p>
+                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-database me-2"></i>Databases &
+                                Analytics</h5>
+                            <p class="text-secondary small">SQL execution matrices (Complex subqueries, indexing,
+                                inner/outer table joins), MongoDB document parsing, MariaDB engine configurations,
+                                Firebase JSON handling, Power BI workspace design.</p>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Skill Set Column 3: Frontend Layout systems -->
                 <div class="col-md-4">
                     <div class="card h-100 border-0 p-3 shadow-sm bg-card-dark">
                         <div class="card-body">
-                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-window-maximize me-2"></i>Frontend Capabilities</h5>
-                            <p class="text-secondary small">Semantic HTML5 engines, layout orchestration (CSS Flexbox & CSS Grid), Bootstrap 5 responsiveness variables, Vanilla DOM handling via ES6 JS scripts, legacy jQuery structures.</p>
+                            <h5 class="fw-bold text-accent mb-3"><i class="fas fa-window-maximize me-2"></i>Frontend
+                                Capabilities</h5>
+                            <p class="text-secondary small">Semantic HTML5 engines, layout orchestration (CSS Flexbox &
+                                CSS Grid), Bootstrap 5 responsiveness variables, Vanilla DOM handling via ES6 JS
+                                scripts, legacy jQuery structures.</p>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -337,9 +416,10 @@
     -->
     <section id="certificates" class="container py-6">
         <h2 class="section-title text-center mb-2">Technical Certifications</h2>
-        <p class="text-muted text-center mb-5 fs-6">Verified continuous engineering validation matrices compiled across multiple platforms</p>
+        <p class="text-muted text-center mb-5 fs-6">Verified continuous engineering validation matrices compiled across
+            multiple platforms</p>
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            
+
             <!-- CERTIFICATE BLOCK 1: Advanced Python -->
             <div class="col">
                 <div class="card h-100 cert-card shadow-sm">
@@ -351,7 +431,8 @@
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Advanced Python Engine Routing</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Sept 2024</p>
-                        <a href="images/certs/Python.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/Python.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -365,7 +446,8 @@
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Relational Database Infrastructure (SQL)</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Jan 2025</p>
-                        <a href="images/certs/SQL.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/SQL.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -374,12 +456,14 @@
             <div class="col">
                 <div class="card h-100 cert-card shadow-sm">
                     <div class="ratio ratio-16x9 image-box bg-dark">
-                        <img src="images/certs/javascript.png" class="card-img-top" alt="JavaScript Certificate" loading="lazy">
+                        <img src="images/certs/javascript.png" class="card-img-top" alt="JavaScript Certificate"
+                            loading="lazy">
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">JavaScript Algorithms & ES6 Syntaxes</h6>
                         <p class="text-muted small mb-3">freeCodeCamp Verification &bull; June 2025</p>
-                        <a href="images/certs/javascript.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/javascript.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -393,7 +477,8 @@
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">NodeJS Backend Runtime Operations</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Jan 2025</p>
-                        <a href="images/certs/nodeJs.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/nodeJs.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -407,7 +492,8 @@
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Semantic Markup Engine (HTML5)</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Mar 2025</p>
-                        <a href="images/certs/HTML.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/HTML.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -421,7 +507,8 @@
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Advanced Styling Architectures (CSS3)</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Mar 2025</p>
-                        <a href="images/certs/CSS.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/CSS.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -430,12 +517,14 @@
             <div class="col">
                 <div class="card h-100 cert-card shadow-sm">
                     <div class="ratio ratio-16x9 image-box bg-dark">
-                        <img src="images/certs/Flexbox.png" class="card-img-top" alt="Flexbox Certificate" loading="lazy">
+                        <img src="images/certs/Flexbox.png" class="card-img-top" alt="Flexbox Certificate"
+                            loading="lazy">
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Dynamic UI Formatting (CSS Flexbox)</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Apr 2025</p>
-                        <a href="images/certs/Flexbox.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/Flexbox.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -444,12 +533,14 @@
             <div class="col">
                 <div class="card h-100 cert-card shadow-sm">
                     <div class="ratio ratio-16x9 image-box bg-dark">
-                        <img src="images/certs/bootstrap.png" class="card-img-top" alt="Bootstrap Certificate" loading="lazy">
+                        <img src="images/certs/bootstrap.png" class="card-img-top" alt="Bootstrap Certificate"
+                            loading="lazy">
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Fluid Grid Scaffolding (Bootstrap 5)</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Apr 2025</p>
-                        <a href="images/certs/bootstrap.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/bootstrap.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -463,7 +554,8 @@
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">DOM Animation Scripts (jQuery Framework)</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; June 2025</p>
-                        <a href="images/certs/jQuery.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/jQuery.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -472,12 +564,14 @@
             <div class="col">
                 <div class="card h-100 cert-card shadow-sm">
                     <div class="ratio ratio-16x9 image-box bg-dark">
-                        <img src="images/certs/Power BI.png" class="card-img-top" alt="Power BI Certificate" loading="lazy">
+                        <img src="images/certs/Power BI.png" class="card-img-top" alt="Power BI Certificate"
+                            loading="lazy">
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Business Intelligence Systems & Power BI</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Nov 2024</p>
-                        <a href="images/certs/Power BI.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/Power BI.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -486,12 +580,14 @@
             <div class="col">
                 <div class="card h-100 cert-card shadow-sm">
                     <div class="ratio ratio-16x9 image-box bg-dark">
-                        <img src="images/certs/basic coding in python.png" class="card-img-top" alt="Basic Python Certificate" loading="lazy">
+                        <img src="images/certs/basic coding in python.png" class="card-img-top"
+                            alt="Basic Python Certificate" loading="lazy">
                     </div>
                     <div class="card-body d-flex flex-column">
                         <h6 class="fw-bold mb-1">Foundational Algorithmic Coding in Python</h6>
                         <p class="text-muted small mb-3">PrepInsta Prime &bull; Apr 2025</p>
-                        <a href="images/certs/basic coding in python.png" target="_blank" class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
+                        <a href="images/certs/basic coding in python.png" target="_blank"
+                            class="btn btn-sm btn-outline-accent mt-auto w-100">View Live Verification Link</a>
                     </div>
                 </div>
             </div>
@@ -505,12 +601,14 @@
             <h2 class="fw-bold mb-3">📬 Connect With Me</h2>
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <p class="lead text-secondary mb-4">I am actively pursuing entry-level development opportunities or internships focused on backend services, cloud scaling setups, and automated data engines.</p>
+                    <p class="lead text-secondary mb-4">I am actively pursuing entry-level development opportunities or
+                        internships focused on backend services, cloud scaling setups, and automated data engines.</p>
                     <div class="d-flex justify-content-center gap-3">
-                        <a href="https://www.linkedin.com/in/rhp99/" target="_blank" class="btn btn-accent px-4 py-2 text-dark fw-bold shadow">
-                            <i class="fab fa-linkedin me-2"></i>LinkedIn Network
+                        <a id="linkedin-contact-btn" href="https://www.linkedin.com/in/rhp99/"
+                            class="btn btn-outline-light">LinkedIn</a>
                         </a>
-                        <a href="https://github.com/gol-den-name" target="_blank" class="btn btn-outline-accent px-4 py-2 fw-semibold shadow-sm">
+                        <a href="https://github.com/gol-den-name" target="_blank"
+                            class="btn btn-outline-accent px-4 py-2 fw-semibold shadow-sm">
                             <i class="fab fa-github me-2"></i>GitHub Code Repos
                         </a>
                     </div>
@@ -522,26 +620,26 @@
     <!-- [JAVASCRIPT ENGINE DEPENDENCIES IMPLEMENTATIONS STACK] -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-    
+
     <script>
         // --- TYPED.JS DRIVER COMPILER INSTANCE ---
         const typedTarget = document.querySelector(".typed");
         if (typedTarget) {
             new Typed(".typed", {
                 strings: typedTarget.getAttribute("data-typed-items").split(","),
-                typeSpeed: 60, 
-                backSpeed: 30, 
-                loop: true     
+                typeSpeed: 60,
+                backSpeed: 30,
+                loop: true
             });
         }
 
         // --- PRODUCTION LOGIC FOR CLIENT CONTROLLER STATES (THEME CONTROLS) ---
         const toggleBtn = document.getElementById("themeToggle");
-        
+
         if (localStorage.getItem("theme") === "light") {
             setLightMode();
         } else {
-            setDarkMode(); 
+            setDarkMode();
         }
 
         toggleBtn.addEventListener("click", () => {
@@ -554,19 +652,75 @@
 
         function setDarkMode() {
             document.body.classList.add("dark-mode");
-            document.body.setAttribute("data-bs-theme", "dark"); 
+            document.body.setAttribute("data-bs-theme", "dark");
             toggleBtn.innerText = "☀️ Light Mode";
             toggleBtn.className = "btn btn-sm btn-outline-accent";
-            localStorage.setItem("theme", "dark"); 
+            localStorage.setItem("theme", "dark");
         }
 
         function setLightMode() {
             document.body.classList.remove("dark-mode");
-            document.body.setAttribute("data-bs-theme", "light"); 
+            document.body.setAttribute("data-bs-theme", "light");
             toggleBtn.innerText = "🌙 Dark Mode";
             toggleBtn.className = "btn btn-sm btn-outline-dark";
-            localStorage.setItem("theme", "light"); 
+            localStorage.setItem("theme", "light");
         }
+    </script>
+    <!-- [COUNTER API SECTION and scrolling part] -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const namespace = "gol-den-name-portfolio";
+            const key = "clicks";
+            const getUrl = `https://api.counterapi.dev/v1/${namespace}/${key}`;
+            const incUrl = `https://api.counterapi.dev/v1/${namespace}/${key}/increment`;
+            const countBadge = document.getElementById("interest-count");
+            const interestBtn = document.getElementById("interest-btn");
+
+            // 1. Fetch current interest clicks count on page load
+            fetch(getUrl)
+                .then(res => res.json())
+                .then(data => {
+                    countBadge.innerText = data.count || 0;
+                })
+                .catch(() => countBadge.innerText = 0);
+
+            // 2. Click Handler: Log, Redirect, and Illuminate
+            interestBtn.addEventListener("click", function () {
+                interestBtn.disabled = true; // Prevent multiple counts
+
+                fetch(incUrl)
+                    .then(res => res.json())
+                    .then(data => {
+                        countBadge.innerText = data.count;
+                        interestBtn.innerHTML = `<span>✅ Interest Logged!</span> <span class="badge bg-dark-base text-accent ms-1">${data.count}</span>`;
+                    })
+                    .catch(() => {
+                        interestBtn.disabled = false;
+                    });
+
+                // 3. Smoothly redirect to the contact section
+                const contactSection = document.getElementById("contact");
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+
+                // 4. Illuminate the LinkedIn button
+                const linkedinBtn = document.getElementById("linkedin-contact-btn");
+                if (linkedinBtn) {
+                    // Add a temporary glow animation or high-contrast class
+                    linkedinBtn.classList.add("btn-accent");
+                    linkedinBtn.style.boxShadow = "0 0 20px #38BDF8";
+                    linkedinBtn.style.transform = "scale(1.1)";
+                    linkedinBtn.style.transition = "all 0.4s ease-in-out";
+
+                    // Optional: Remove the intense flash effect after 3 seconds
+                    setTimeout(() => {
+                        linkedinBtn.style.boxShadow = "none";
+                        linkedinBtn.style.transform = "scale(1)";
+                    }, 3000);
+                }
+            });
+        });
     </script>
 </body>
 
