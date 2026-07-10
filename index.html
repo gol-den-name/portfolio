@@ -87,7 +87,6 @@
             <!-- STATS & INTERACTION HUB -->
             <div class="d-flex flex-column align-items-center justify-content-center gap-3">
 
-                <!-- Interactive Show Interest Action Button -->
                 <div>
                     <button id="interest-btn"
                         class="btn btn-accent px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2">
@@ -96,11 +95,10 @@
                     </button>
                 </div>
 
-                <!-- Automated Total Page Views Track Badge -->
                 <div class="d-inline-block">
-                    <img src="https://hitscounter.dev/api/count/incr/badge.svg?url=https%3A%2F%2Fgol-den-name.github.io%2Fportfolio&count_bg=%2338BDF8&title_bg=%231E293B&title=views"
+                    <img src="https://img.shields.io/badge/dynamic/json?label=views&query=%24.value&url=https%3A%2F%2Fapi.countapi.xyz%2Fhit%2Fgol-den-name-portfolio%2Fvisits&color=38BDF8"
                         alt="Total Page Views Tracker" class="rounded shadow-sm"
-                        style="height: 38px; object-fit: contain;" />
+                        style="height: 28px; object-fit: contain;" />
                 </div>
 
             </div>
@@ -669,51 +667,47 @@
     <!-- [COUNTER API SECTION and scrolling part] -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const namespace = "gol-den-name-portfolio";
-            const key = "clicks";
-            const getUrl = `https://api.counterapi.dev/v1/${namespace}/${key}`;
-            const incUrl = `https://api.counterapi.dev/v1/${namespace}/${key}/increment`;
+            // Using a simpler, highly reliable public counter string format
+            const getUrl = "https://api.counterapi.dev/v1/rochan-portfolio/clicks";
+            const incUrl = "https://api.counterapi.dev/v1/rochan-portfolio/clicks/increment";
+
             const countBadge = document.getElementById("interest-count");
             const interestBtn = document.getElementById("interest-btn");
 
-            // 1. Fetch current interest clicks count on page load
+            // Initialize the counter space on the public database smoothly
             fetch(getUrl)
                 .then(res => res.json())
                 .then(data => {
-                    countBadge.innerText = data.count || 0;
+                    // If the server doesn't have it yet, default to 0 instead of throwing 'undefined'
+                    countBadge.innerText = data.count !== undefined ? data.count : 0;
                 })
                 .catch(() => countBadge.innerText = 0);
 
-            // 2. Click Handler: Log, Redirect, and Illuminate
             interestBtn.addEventListener("click", function () {
-                interestBtn.disabled = true; // Prevent multiple counts
+                interestBtn.disabled = true;
 
                 fetch(incUrl)
                     .then(res => res.json())
                     .then(data => {
-                        countBadge.innerText = data.count;
-                        interestBtn.innerHTML = `<span>✅ Interest Logged!</span> <span class="badge bg-dark-base text-accent ms-1">${data.count}</span>`;
+                        const finalCount = data.count !== undefined ? data.count : 1;
+                        countBadge.innerText = finalCount;
+                        interestBtn.innerHTML = `<span>✅ Interest Logged!</span> <span class="badge bg-dark-base text-accent ms-1">${finalCount}</span>`;
                     })
                     .catch(() => {
                         interestBtn.disabled = false;
                     });
 
-                // 3. Smoothly redirect to the contact section
                 const contactSection = document.getElementById("contact");
                 if (contactSection) {
                     contactSection.scrollIntoView({ behavior: "smooth" });
                 }
 
-                // 4. Illuminate the LinkedIn button
                 const linkedinBtn = document.getElementById("linkedin-contact-btn");
                 if (linkedinBtn) {
-                    // Add a temporary glow animation or high-contrast class
                     linkedinBtn.classList.add("btn-accent");
                     linkedinBtn.style.boxShadow = "0 0 20px #38BDF8";
                     linkedinBtn.style.transform = "scale(1.1)";
                     linkedinBtn.style.transition = "all 0.4s ease-in-out";
-
-                    // Optional: Remove the intense flash effect after 3 seconds
                     setTimeout(() => {
                         linkedinBtn.style.boxShadow = "none";
                         linkedinBtn.style.transform = "scale(1)";
