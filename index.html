@@ -669,35 +669,27 @@
     <!-- [COUNTER API SECTION and scrolling part] -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // Corrected format: api.counterapi.dev/v1/{workspace}/{counter}
-            const getUrl = "https://api.counterapi.dev/v1/goldenname_portfolio/interest_clicks";
-            const incUrl = "https://api.counterapi.dev/v1/goldenname_portfolio/interest_clicks/increment";
+            // Using a simpler, highly reliable public counter string format
+            const getUrl = "https://api.counterapi.dev/v1/rochan-portfolio/clicks";
+            const incUrl = "https://api.counterapi.dev/v1/rochan-portfolio/clicks/increment";
 
             const countBadge = document.getElementById("interest-count");
             const interestBtn = document.getElementById("interest-btn");
 
-            // Initialize/Fetch counter cleanly
+            // Initialize the counter space on the public database smoothly
             fetch(getUrl)
-                .then(res => {
-                    if (!res.ok) throw new Error("Initialization required");
-                    return res.json();
-                })
+                .then(res => res.json())
                 .then(data => {
+                    // If the server doesn't have it yet, default to 0 instead of throwing 'undefined'
                     countBadge.innerText = data.count !== undefined ? data.count : 0;
                 })
-                .catch(() => {
-                    // Fallback to 0 if the counter hasn't been created yet
-                    countBadge.innerText = 0;
-                });
+                .catch(() => countBadge.innerText = 0);
 
             interestBtn.addEventListener("click", function () {
                 interestBtn.disabled = true;
 
                 fetch(incUrl)
-                    .then(res => {
-                        if (!res.ok) throw new Error("Could not increment");
-                        return res.json();
-                    })
+                    .then(res => res.json())
                     .then(data => {
                         const finalCount = data.count !== undefined ? data.count : 1;
                         countBadge.innerText = finalCount;
